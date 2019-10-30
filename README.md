@@ -1,7 +1,7 @@
 # Personal API
 
-Make a secured web API that stores and serves up your own personal and professional data!
-As of the current commit, it's oriented towards powering freelancers' websites.
+Make a secured web API that stores and serves up your data!
+The current schema is oriented towards powering freelancers' websites.
 
 ## Installation
 
@@ -65,3 +65,16 @@ As of today the available endpoints are
     description: str
     link: str (optional)
 ```
+
+## Dependencies
+
+This project relies on the excellent work of 
+[SQLALchemy](https://www.sqlalchemy.org/), 
+[Pydantic](https://github.com/samuelcolvin/pydantic/),
+[FastAPI](https://fastapi.tiangolo.com/),
+[Pytest](https://docs.pytest.org/en/latest/contents.html),
+and [Starlette](https://www.starlette.io/)
+
+## Why?
+
+It started as an excuse to get acquainted with FastAPI, as well as to make a front-end first (JAMstack?) personal site.
