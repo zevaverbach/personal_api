@@ -3,7 +3,7 @@ import datetime as dt
 import dateparser as dp
 from sqlalchemy import Column, Integer, desc
 
-from app.database import SessionLocal
+from personal_api.database import SessionLocal
 
 
 class Invalid(Exception):

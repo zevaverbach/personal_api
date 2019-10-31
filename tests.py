@@ -1,13 +1,11 @@
 """
 TODO: set up a test db or mocks instead of relying there being at least one item available in most of the 'get' tests.
 """
-from pytest import skip, mark
 from starlette.testclient import TestClient
 
-from app.crud import create_thing
-from app.models import Resume, Availability, Project, Post
 from config import PERSONAL_API_USERNAME, PERSONAL_API_PASS
-from app.main import app
+from personal_api.main import app
+from personal_api.models import Resume, Availability, Project, Post
 
 client = TestClient(app)
 

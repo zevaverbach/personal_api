@@ -28,6 +28,7 @@ fastapi = "=0.42.0"
 requests = "=2.22.0"
 idna = "=2.8"
 starlette = "=0.12.9"
+gunicorn = "^19.9"
 
 [tool.poetry.dev-dependencies]
 

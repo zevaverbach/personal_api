@@ -4,10 +4,10 @@ from fastapi import FastAPI, Depends, HTTPException
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from sqlalchemy.orm import Session
 from starlette.requests import Request
-from starlette.status import HTTP_401_UNAUTHORIZED, HTTP_409_CONFLICT
+from starlette.status import HTTP_401_UNAUTHORIZED
 
-from app import schemas, models
 from config import PERSONAL_API_USERNAME, PERSONAL_API_PASS
+from personal_api import schemas, models
 from .crud import (
     create_thing as create, get_thing as get, update_thing as update, DoesntExist,
     delete_thing as delete,

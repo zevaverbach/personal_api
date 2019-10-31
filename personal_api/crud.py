@@ -1,9 +1,7 @@
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
-import app.models
-from app.database import Base
-from . import schemas
+from personal_api.database import Base
 
 
 class DoesntExist(Exception):

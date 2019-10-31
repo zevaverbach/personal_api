@@ -5,7 +5,7 @@ as well as adding a self.when value in the constructor
 import datetime as dt
 from sqlalchemy import Column, DateTime, String, Boolean, Date
 
-from app.database import Base, SessionLocal
+from personal_api.database import Base, SessionLocal
 from helpers import parse_date_string, BaseMixIn
 
 
