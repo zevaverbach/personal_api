@@ -24,7 +24,6 @@ services:
   app:
     build:
       context: ./
-      dockerfile: Dockerfile
     image: personal_api:0.0.1
     container_name: personal_api
     env_file:
