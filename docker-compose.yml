@@ -36,3 +36,5 @@ services:
       my-network:
         aliases:
           - personal-api
+networks:
+  my-network:
