@@ -30,10 +30,9 @@ services:
       - ./.env.prod
     volumes:
       - ./:/personal_api/
-    command: gunicorn -w 4 -k uvicorn.workers.UvicornWorker personal_api.main:app -b 0.0.0.0
-    ports:
-      - "80:80"
-      - "443:443"
+    command: gunicorn -w 4 -k uvicorn.workers.UvicornWorker personal_api.main:app -b 0.0.0.0:8001
+    expose:
+      - 8001
     networks:
       my-network:
         aliases:
