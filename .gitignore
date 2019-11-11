@@ -1,3 +1,4 @@
-Pipfile
+Pipfile.lock
 codealike.json
 data/certbot/
+personal_api.egg-info/

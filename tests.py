@@ -8,7 +8,6 @@ from personal_api.main import app
 from personal_api.models import Resume, Availability, Project, Post
 
 client = TestClient(app)
-
 VALID_AUTH = (PERSONAL_API_USERNAME, PERSONAL_API_PASS)
 
 

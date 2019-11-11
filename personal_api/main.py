@@ -2,6 +2,7 @@ from typing import List
 
 from fastapi import FastAPI, Depends, HTTPException
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
+import rollbar
 from sqlalchemy.orm import Session
 from starlette.requests import Request
 from starlette.status import HTTP_401_UNAUTHORIZED
@@ -17,6 +18,7 @@ from .database import SessionLocal, Base, engine
 Base.metadata.create_all(bind=engine)
 app = FastAPI()
 security = HTTPBasic()
+rollbar.init('42da7f4812c043f9b19dcf8d2089d162')
 
 
 def get_db():
@@ -29,6 +31,8 @@ def get_db():
 
 
 def get_current_username(credentials: HTTPBasicCredentials = Depends(security)):
+    rollbar.report_message(f"username and pass: {PERSONAL_API_USERNAME}, {PERSONAL_API_PASS}", 'info')
+
     if credentials.username != PERSONAL_API_USERNAME or credentials.password != PERSONAL_API_PASS:
         raise HTTPException(
             status_code=HTTP_401_UNAUTHORIZED,
@@ -151,3 +155,4 @@ def delete_project(post_id: int,
         delete(db, models.Post, post_id)
     except DoesntExist:
         raise HTTPException(status_code=404)
+
